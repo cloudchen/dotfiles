@@ -14,6 +14,10 @@ if [ -d /usr/local/bin ]; then
     PATH="/usr/local/bin:${PATH}"
 fi
 
+if [ -d /usr/local/share/npm/bin ]; then
+    PATH="/usr/local/share/npm/bin:${PATH}"
+fi
+
 export EDITOR="vim"
 
 #show pwd as absolute path and make prompt colorful
