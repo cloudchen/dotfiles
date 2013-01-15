@@ -44,6 +44,8 @@ export HISTIGNORE="ls:[bf]g:exit:pwd:clear:cd"
 #add datetime to history and make it colorful
 export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: "
 
+export FIGNORE="DS_Store:${FIGNORE}"
+
 #save multiple line commands into a singile history line
 shopt -s cmdhist
 
