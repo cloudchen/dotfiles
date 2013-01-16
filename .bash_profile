@@ -18,6 +18,10 @@ if [ -d /usr/local/share/npm/bin ]; then
     PATH="/usr/local/share/npm/bin:${PATH}"
 fi
 
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+fi
+
 export EDITOR="vim"
 
 #show pwd as absolute path and make prompt colorful
@@ -44,6 +48,7 @@ export HISTIGNORE="ls:[bf]g:exit:pwd:clear:cd"
 #add datetime to history and make it colorful
 export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: "
 
+#ignore unwanted file when using bash completion
 export FIGNORE="DS_Store:${FIGNORE}"
 
 #save multiple line commands into a singile history line
