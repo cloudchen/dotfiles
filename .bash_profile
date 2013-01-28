@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 umask 022
 
@@ -14,8 +14,16 @@ if [ -d /usr/local/bin ]; then
     PATH="/usr/local/bin:${PATH}"
 fi
 
+if [ -d /usr/local/sbin ]; then
+    PATH="/usr/local/sbin:${PATH}"
+fi
+
 if [ -d /usr/local/share/npm/bin ]; then
     PATH="/usr/local/share/npm/bin:${PATH}"
+fi
+
+if [ -d ~/bin ]; then
+    PATH="~/bin:${PATH}"
 fi
 
 if [ -f /usr/local/etc/bash_completion ]; then
@@ -40,7 +48,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=100000
 
 #append last command to history file when runs every command
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 #set ignored command list
 export HISTIGNORE="ls:[bf]g:exit:pwd:clear:cd"
