@@ -22,6 +22,10 @@ if [ -d /usr/local/share/npm/bin ]; then
     PATH="/usr/local/share/npm/bin:${PATH}"
 fi
 
+if [ -d /usr/local/share/python ]; then
+    PATH="/usr/local/share/python:${PATH}"
+fi
+
 if [ -d ~/bin ]; then
     PATH="~/bin:${PATH}"
 fi
