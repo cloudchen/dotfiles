@@ -34,6 +34,7 @@ if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
 fi
 
+export _Z_NO_RESOLVE_SYMLINKS=1
 [[ -f /usr/local/etc/profile.d/z.sh ]] && . /usr/local/etc/profile.d/z.sh
 
 export EDITOR="vim"
