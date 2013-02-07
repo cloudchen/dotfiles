@@ -34,6 +34,8 @@ if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
 fi
 
+[[ -f /usr/local/etc/profile.d/z.sh ]] && . /usr/local/etc/profile.d/z.sh
+
 export EDITOR="vim"
 
 #show pwd as absolute path and make prompt colorful
