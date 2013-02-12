@@ -34,6 +34,7 @@ if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
 fi
 
+#prevent symlink resolution
 export _Z_NO_RESOLVE_SYMLINKS=1
 [[ -f /usr/local/etc/profile.d/z.sh ]] && . /usr/local/etc/profile.d/z.sh
 
@@ -72,5 +73,11 @@ shopt -s cmdhist
 #append to history file rather than overwrite
 shopt -s histappend
 
-# check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+#check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+#put failed substitution command back on the command line as it has typed
+shopt -s histreedit
+
+#expand history related command rather than directly execute it
+shopt -s histverify
