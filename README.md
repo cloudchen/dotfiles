@@ -9,3 +9,8 @@
 	git init 
 	git remote add origin https://github.com/cloudchen/dotfiles.git
 	git pull origin master
+
+## Update exclude file
+Append follwing code to ~/.git/info/exclude
+
+	*/*
