@@ -95,3 +95,6 @@ shopt -s histreedit
 
 #expand history related command rather than directly execute it
 shopt -s histverify
+
+#ignore common spelling/path mistakes for cd command
+shopt -s cdspell
