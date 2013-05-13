@@ -9,6 +9,7 @@ alias rm='rm -i'
 alias -- ..='cd ../'
 alias -- ...='cd ../../'
 alias -- ....='cd ../../../'
+alias tree='tree -ACF'
 
 if [ -d /usr/local/bin ]; then
     PATH="/usr/local/bin:${PATH}"
