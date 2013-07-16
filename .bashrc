@@ -34,6 +34,7 @@ fi
 #show pwd as absolute path and make prompt colorful
 PS1='\[$(tput setaf 2)\]\u@\h: \[$(tput setaf 4)\]\w\[$(tput setaf 5)\]'
 
+#add bash completion support
 if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
 
@@ -50,6 +51,12 @@ fi
 #show $ prompt at new line
 PS1+='\n\[$(tput setaf 1)\]\$\[$(tput sgr0)\] '
 export PS1
+
+#add auto-completion for rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+#add jsctags to node path
+export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
 
 #prevent symlink resolution
 export _Z_NO_RESOLVE_SYMLINKS=1
