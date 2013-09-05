@@ -46,6 +46,10 @@ if [ -f /usr/local/etc/bash_completion ]; then
 
     # append git-prompt to $PS1
     PS1+='$(__git_ps1 " (%s)")'
+
+    if hash grunt 2>/dev/null; then
+        eval "$(grunt --completion=bash)"
+    fi
 fi
 
 #show $ prompt at new line
