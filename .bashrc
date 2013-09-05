@@ -35,8 +35,8 @@ fi
 PS1='\[$(tput setaf 2)\]\u@\h: \[$(tput setaf 4)\]\w\[$(tput setaf 5)\]'
 
 #add bash completion support
-if [ -f /usr/local/etc/bash_completion ]; then
-    . /usr/local/etc/bash_completion
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
 
     # show dirty state
     export GIT_PS1_SHOWDIRTYSTATE=1
