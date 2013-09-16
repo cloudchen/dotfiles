@@ -52,6 +52,10 @@ if [ -f /usr/local/share/bash-completion/bash_completion ]; then
     fi
 fi
 
+#Git
+#avoid interactive session for merge commit
+export GIT_MERGE_AUTOEDIT=no
+
 #show $ prompt at new line
 PS1+='\n\[$(tput setaf 1)\]\$\[$(tput sgr0)\] '
 export PS1
