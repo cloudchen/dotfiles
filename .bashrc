@@ -11,6 +11,8 @@ alias -- ...='cd ../../'
 alias -- ....='cd ../../../'
 alias tree='tree -ACF'
 
+alias git-branch-cleanup='git branch --merged | grep -v "\*" | xargs -pn 1 git branch -d'
+
 if [ -d /usr/local/bin ]; then
     PATH="/usr/local/bin:${PATH}"
 fi
@@ -35,8 +37,8 @@ fi
 PS1='\[$(tput setaf 2)\]\u@\h: \[$(tput setaf 4)\]\w\[$(tput setaf 5)\]'
 
 #add bash completion support
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-    . /usr/local/share/bash-completion/bash_completion
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
 
     # show dirty state
     export GIT_PS1_SHOWDIRTYSTATE=1
@@ -114,3 +116,6 @@ shopt -s histverify
 
 #ignore common spelling/path mistakes for cd command
 shopt -s cdspell
+
+#docker default machine
+if docker-machine env default &> /dev/null; then eval "$(docker-machine env default)"; fi

@@ -12,6 +12,7 @@
 [mergetool]
     keepBackup = true
 [alias]
+    st = status
     s = status -sb
     co = checkout
     ds = diff --cached
