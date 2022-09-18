@@ -119,3 +119,12 @@ shopt -s cdspell
 
 #docker default machine
 if docker-machine env default &> /dev/null; then eval "$(docker-machine env default)"; fi
+
+#ensure pager defined in .gitconfig is being used
+unset GIT_PAGER
+
+#ensure editor deinfed in .gitconfig is being used
+unset GIT_EDITOR
+
+#enfore english as environment language
+LC_ALL=en_US

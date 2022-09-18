@@ -9,6 +9,8 @@
     autocorrect = 1
 [core]
     excludesfile = ~/.gitignore
+    pager = cat
+    editor = vim
 [mergetool]
     keepBackup = true
 [alias]
